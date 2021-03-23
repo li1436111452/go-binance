@@ -39,6 +39,25 @@ func (s *PremiumIndexService) Do(ctx context.Context, opts ...RequestOption) (re
 	return res, nil
 }
 
+// Do send request
+func (s *PremiumIndexService) DoGetAll(ctx context.Context, opts ...RequestOption) (res *[]PremiumIndex, err error) {
+	r := &request{
+		method:   "GET",
+		endpoint: "/fapi/v1/premiumIndex",
+		secType:  secTypeNone,
+	}
+	data, err := s.c.callAPI(ctx, r, opts...)
+	if err != nil {
+		return nil, err
+	}
+	res = new([]PremiumIndex)
+	err = json.Unmarshal(data, &res)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
 // PremiumIndex define premium index of mark price
 type PremiumIndex struct {
 	Symbol          string `json:"symbol"`
