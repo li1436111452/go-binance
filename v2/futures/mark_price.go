@@ -50,7 +50,7 @@ func (s *PremiumIndexService) DoGetAll(ctx context.Context, opts ...RequestOptio
 	if err != nil {
 		return nil, err
 	}
-	res = new([]PremiumIndex)
+	res = make([]*PremiumIndex, 0)
 	err = json.Unmarshal(data, &res)
 	if err != nil {
 		return nil, err
