@@ -1,4 +1,4 @@
-module github.com/adshao/go-binance/v2
+module github.com/li1436111452/go-binance/v2
 
 go 1.13
 
@@ -12,5 +12,3 @@ require (
 	github.com/stretchr/objx v0.1.0 // indirect
 	github.com/stretchr/testify v1.2.1
 )
-
-replace github.com/adshao/go-binance/v2 v2.2.1 => github.com/li1436111452/go-binance/v2 v2.2.2
