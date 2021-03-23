@@ -40,7 +40,7 @@ func (s *PremiumIndexService) Do(ctx context.Context, opts ...RequestOption) (re
 }
 
 // Do send request
-func (s *PremiumIndexService) DoGetAll(ctx context.Context, opts ...RequestOption) (res *[]PremiumIndex, err error) {
+func (s *PremiumIndexService) DoGetAll(ctx context.Context, opts ...RequestOption) (res []*PremiumIndex, err error) {
 	r := &request{
 		method:   "GET",
 		endpoint: "/fapi/v1/premiumIndex",
